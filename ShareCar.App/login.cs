@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace ShareCar.App
 {
-    public partial class login : Form
+    public partial class login : MetroForm
     {
         public login()
         {
