@@ -16,7 +16,9 @@ namespace ShareCar.App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+           // Application.Run(new login());
+            Application.Run(new ConfirmPassword());
+            //Application.Run(new SendCode());
         }
     }
 }
