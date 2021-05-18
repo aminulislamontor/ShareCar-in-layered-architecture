@@ -122,8 +122,7 @@ namespace ShareCar.App
             this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUserName.CustomButton.UseSelectable = true;
             this.txtUserName.CustomButton.Visible = false;
-            this.txtUserName.Lines = new string[] {
-        "8"};
+            this.txtUserName.Lines = new string[0];
             this.txtUserName.Location = new System.Drawing.Point(125, 77);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.MaxLength = 32767;
@@ -137,7 +136,6 @@ namespace ShareCar.App
             this.txtUserName.ShortcutsEnabled = true;
             this.txtUserName.Size = new System.Drawing.Size(216, 19);
             this.txtUserName.TabIndex = 6;
-            this.txtUserName.Text = "8";
             this.txtUserName.UseSelectable = true;
             this.txtUserName.WaterMark = "UserName";
             this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
