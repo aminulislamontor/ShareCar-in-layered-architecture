@@ -17,7 +17,7 @@ namespace ShareCar.App
     public partial class ConfirmPassword : MetroForm
     {
         private DataAccess DA { get; set; }
-        string userEmail = SendCode.to;
+        string userEmail = SendCode.to.ToString();
 
         public ConfirmPassword()
         {
@@ -27,22 +27,27 @@ namespace ShareCar.App
 
         private void btnConfirmPassword_Click(object sender, EventArgs e)
         {
-            if (this.txtNewPassword.Text == this.txtConfirmPassword.Text)
+            if (this.txtConfirmPassword.Text == this.txtNewPassword.Text) 
             {
-                string query= "UPDATE UserInformation set Password = '" + this.txtConfirmPassword.Text +"' where UserMail = '" + this.userEmail + "'; ";
-                
-                
+                string query = "UPDATE UserTbl set UserPassword = '" + this.txtConfirmPassword.Text + "' where UserMail = '" + this.userEmail + "'; ";
+
+
                 int count = this.DA.ExecuteDML(query);
+
+               // this.txtTest.Text = count.ToString();
+
                 if (count == 1)
                 {
-                    MessageBox.Show("Change");
+                    MessageBox.Show("Password Change Successfully");
+                    login lg =new login();
+                    lg.Show();
+                    this.Visible = false;
                 }
                 else
                 {
                     MessageBox.Show("Can not change");
                 }
             }
-
             else
             {
                 MessageBox.Show("Can't match with the new password");
@@ -52,7 +57,7 @@ namespace ShareCar.App
 
 
 
-        private void GridView(string sql="select * from UserInformation") 
+       /* private void GridView(string sql="select * from UserInformation") 
         {
             try
             {
@@ -64,11 +69,11 @@ namespace ShareCar.App
             {
                 MessageBox.Show("Erroe: "+exc.Message);
             }
-        }
+        }*/
 
-        private void btnShowUser_Click(object sender, EventArgs e)
+       /* private void btnShowUser_Click(object sender, EventArgs e)
         {
             this.GridView();
-        }
+        }*/
     }
 }

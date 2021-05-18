@@ -43,7 +43,7 @@ namespace ShareCar.Data
 
         public DataAccess()
         {
-            this.Sqlcon = new SqlConnection("DataSourcce");
+            this.Sqlcon = new SqlConnection(@"Data Source=HP_PROBOOK\SQLEXPRESS;Initial Catalog=Car;Integrated Security=True");
             this.Sqlcon.Open();
         }
 

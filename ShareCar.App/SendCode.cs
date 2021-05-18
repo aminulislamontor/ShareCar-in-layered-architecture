@@ -15,10 +15,10 @@ namespace ShareCar.App
 {
     public partial class SendCode : MetroForm
     {
-        //string otpCode;
+        string otpCode;
         //public static string to;
 
-        public string OtpCode { get; set; }
+        //public string OtpCode { get; set; }
         public static string to;
 
         public SendCode()
@@ -29,28 +29,25 @@ namespace ShareCar.App
 
         private void btnSendEmail_Click(object sender, EventArgs e)
         {
-            string from;  // for mail. Jei mail theke user mail e varification code send hobe
-            string pass;  // mail er password
-            string messageBody; // holding otp code
+            string from;  
+            string pass; 
+            string messageBody; 
             Random random = new Random();
-            this.OtpCode = (random.Next(999999)).ToString();  // 6 digits random number
+            this.otpCode = (random.Next(999999)).ToString(); 
             MailMessage message = new MailMessage();
             to = (this.txtSendEmail.Text).ToString();
-            from = "";  // you have to give an email id like "mahabub@gmail.com";
-            pass = ""; // have to give the password
-            messageBody = "Your reset OTP code is : " + this.OtpCode;
+            from = "ikmaminul@gmail.com";  //mahbub@gmail.com
+            pass = "DdD4z!K:nHjb7bF";  //password of the mail
+            messageBody = "Your reset OTP code is : " + this.otpCode;
             message.To.Add(to);
             message.From = new MailAddress(from);
             message.Body = messageBody;
             message.Subject = "Forgot Password Code";
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            // ei gula aktu google theke study korte hobe
             smtp.EnableSsl = true;
             smtp.Port = 587;
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = new NetworkCredential(from, pass);
-
-
             try
             {
                 smtp.Send(message);
@@ -65,11 +62,11 @@ namespace ShareCar.App
 
         private void btnSendCode_Click(object sender, EventArgs e)
         {
-            if (this.OtpCode == (this.txtSendVerifyCode.Text).ToString())
+            if (this.otpCode == (this.txtSendVerifyCode.Text).ToString())
             {
                 to = this.txtSendEmail.Text;
                 ConfirmPassword changePassword = new ConfirmPassword();
-                this.Visible = true;
+                this.Visible = false;
                 changePassword.Show();
             }
             else
