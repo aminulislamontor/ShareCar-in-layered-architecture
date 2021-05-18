@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShareCar.Data;
+using ShareCar.Entity;
 
-namespace ShareCar.Entity
+namespace ShareCar.Repository
 {
-    public class Class1
+    public class UserTblRepository
     {
+
     }
 }

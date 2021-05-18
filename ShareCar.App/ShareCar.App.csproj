@@ -55,12 +55,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dashboard.cs">
+    <Compile Include="AddCar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllUsers.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllUsers.Designer.cs">
+      <DependentUpon>AllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarRequest.Designer.cs">
+      <DependentUpon>CarRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarRequestApprove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarRequestApprove.Designer.cs">
+      <DependentUpon>CarRequestApprove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmPassword.Designer.cs">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutiveDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecutiveDashboard.Designer.cs">
+      <DependentUpon>ExecutiveDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActiveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiveRequest.Designer.cs">
+      <DependentUpon>ActiveRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -68,13 +103,52 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerDashboard.Designer.cs">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="dashboard.resx">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="SendCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendCode.Designer.cs">
+      <DependentUpon>SendCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActiveRequest.resx">
+      <DependentUpon>ActiveRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllUsers.resx">
+      <DependentUpon>AllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarRequest.resx">
+      <DependentUpon>CarRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarRequestApprove.resx">
+      <DependentUpon>CarRequestApprove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmPassword.resx">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecutiveDashboard.resx">
+      <DependentUpon>ExecutiveDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDashboard.resx">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,7 +158,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SendCode.resx">
+      <DependentUpon>SendCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,6 +179,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShareCar.Data\ShareCar.Data.csproj">
+      <Project>{b933a626-b013-468c-a8e9-64b7af86879a}</Project>
+      <Name>ShareCar.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-icon-vector.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
